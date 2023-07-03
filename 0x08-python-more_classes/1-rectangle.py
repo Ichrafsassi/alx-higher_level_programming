@@ -1,12 +1,10 @@
 #!/usr/bin/python3
 
-
 class Rectangle:
     """Rectangle class"""
-
     def __init__(self, width=0, height=0):
-        self.height = height
-        self.width = width
+        self.__height = height
+        self.__width = width
 
     @property
     def height(self):
@@ -15,7 +13,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        """height setter method:checks height value"""
+        """height setter method: checks height value"""
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
         if value < 0:
@@ -29,7 +27,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """width setter method:checks width value"""
+        """width setter method: checks width value"""
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
         if value < 0:
