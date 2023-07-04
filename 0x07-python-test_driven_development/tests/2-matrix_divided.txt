@@ -1,0 +1,58 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+This is an matrix_divided test file
+First import ``matrix_divided`` from the ``2-matrix_divided`` module:
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided 
+
+matrix not list of list:
+    >>> matrix_divided("[[1, 2.0, 3], [4, (5.0, 7), [1, 2, 3]]]", 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is empty:
+    >>> matrix_divided([[]], 2)
+    [[]]
+
+not int or float matrix:
+    >>> matrix_divided([[1, 2.0, "3"], [4, (5.0, 7), [1, 2, 3]]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix lists not same size:
+    >>> matrix_divided([[1, 2.0, 3], [1, 3], [1, 2, 3]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+
+matrix lists not same size:
+    >>> matrix_divided([[1, 2.0, 3], [1, 3], [1, 2, 3]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: Each row of the matrix must have the same size
+
+
+all int or float matrix:
+    >>> matrix_divided([[1, 2.0, 3], [4, 5.0, 6]], 2)
+    [[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+
+
+div is not int:
+    >>> matrix_divided([[1, 2.0, 3], [4, 5.0, 6]], "5")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+division by zero:
+    >>> matrix_divided([[1, 2.0, 3], [4, 5.0, 6]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero

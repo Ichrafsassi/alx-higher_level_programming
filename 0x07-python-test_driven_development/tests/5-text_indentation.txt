@@ -1,0 +1,46 @@
+The ``text_indentation`` function
+========================
+
+Using ``text_indentation``
+---------------------
+
+This is a text_indentation test file.
+First import ``text_indentation`` from the ``5-text_indentation.py`` module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Input not string:
+    >>> text_indentation(123)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Empty input:
+    >>> text_indentation('')
+    
+Text without periods, question marks, and colons:
+    >>> text_indentation('This text without periods - question marks - colons')
+    This text without periods - question marks - colons
+
+Text with periods, question marks, and colons:
+    >>> text_indentation('This is a sentence. This is another sentence? And here is a sentence with a colon:')
+    This is a sentence.
+    <BLANKLINE>
+    This is another sentence?
+    <BLANKLINE>
+    And here is a sentence with a colon:
+    <BLANKLINE>
+
+Text with leading/trailing spaces:
+    >>> text_indentation('  Leading and trailing spaces.  ')
+    Leading and trailing spaces.
+    <BLANKLINE>
+
+Text with multiple lines:
+    >>> text_indentation('This is line 1.This is line 2?And this is line 3:')
+    This is line 1.
+    <BLANKLINE>
+    This is line 2?
+    <BLANKLINE>
+    And this is line 3:
+    <BLANKLINE>
